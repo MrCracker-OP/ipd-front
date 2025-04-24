@@ -54,16 +54,16 @@ const MaxChatPage = () => {
       <main className="flex-grow flex flex-col md:flex-row">
         {/* Avatar section - takes full height on mobile, left half on desktop */}
         <div className="h-1/2 md:h-full md:w-1/2 bg-gradient-to-br from-purple-100 to-indigo-50 relative">
-          <Canvas shadows camera={{ position: [0, 0, 0], fov: 25 }}>
-            <Scenario />
-          </Canvas>
+        <Canvas shadows camera={{ position: [0, 0, 0], fov: 25 }}>
+                <Scenario avatarType="harsh" />
+              </Canvas>
           <Loader />
         </div>
         
         {/* Chat section - takes full height on mobile, right half on desktop */}
         <div className="h-1/2 md:h-full md:w-1/2 flex flex-col bg-gray-50">
-          <div className="bg-purple-600 text-white p-4">
-            <h2 className="text-xl font-bold">Chat with Max</h2>
+          <div className="text-blue-500 text-black p-4">
+            <h2 className="text-xl font-bold">Chat with Harsh</h2>
             <p className="text-sm">Science advisor with expertise in emerging technologies</p>
           </div>
           
@@ -72,7 +72,7 @@ const MaxChatPage = () => {
             <div className="space-y-4">
               {messages.length === 0 ? (
                 <div className="text-center text-gray-500 py-8">
-                  <p>Ask Max anything about science and technology!</p>
+                  <p>Ask Harsh anything about science and technology!</p>
                 </div>
               ) : (
                 messages.map((msg, index) => (
@@ -81,9 +81,9 @@ const MaxChatPage = () => {
                     className={`flex ${msg.isUser ? "justify-end" : "justify-start"}`}
                   >
                     <div 
-                      className={`max-w-3/4 p-3 rounded-lg ${
+                      className={`Harsh-w-3/4 p-3 rounded-lg ${
                         msg.isUser 
-                          ? "bg-purple-600 text-white rounded-br-none" 
+                          ? "text-blue-500 text-black p-4 rounded-br-none" 
                           : "bg-gray-200 text-gray-800 rounded-bl-none"
                       }`}
                     >
@@ -136,7 +136,7 @@ const MaxChatPage = () => {
               <button
                 onClick={sendMessage}
                 disabled={loading}
-                className={`bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-full transition duration-300 ${
+                className={`text-blue-500 text-black p-4 hover:bg-purple-700  rounded-full transition duration-300 ${
                   loading ? "opacity-50 cursor-not-allowed" : ""
                 }`}
               >
@@ -156,7 +156,7 @@ const MaxChatPage = () => {
                       <div className="h-2 w-2 bg-purple-700 rounded-full"></div>
                     </div>
                   </div>
-                  <span>Max is thinking...</span>
+                  <span>Harsh is thinking...</span>
                 </div>
               </div>
             )}
